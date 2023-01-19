@@ -207,6 +207,10 @@ body {
   padding-top: 2px;
   
 }
+.icon_2{
+    width: 40px;
+    cursor: pointer;
+}
 
 /* ---media query---- */
 
