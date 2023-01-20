@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import ProductsForm from "./components/ProductsForm";
 import ProductsList from "./components/ProductsList";
-import Alert from "./components/Alert";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function App() {
-    // estados
+ 
     const [dataProducts, setDataProduct] = useState([]);
     const [productToEdit, setProductToEdit] = useState(null);
-    //Get data API
+
+    
     const getDataProducts = () => {
         axios
             .get("https://products-crud.academlo.tech/products/")
@@ -50,7 +51,7 @@ function App() {
     };
     return (
         <div className="App">
-            { dataProducts ?
+        
             <ProductsForm
                 createProduct={(data) => createProduct(data)}
                 productSelectToEdit={productToEdit}
@@ -58,7 +59,7 @@ function App() {
                 modifiedProduct(modifiedData)
                 }
             />
-            : <Alert />}
+            
             
          
             <ProductsList
@@ -66,10 +67,7 @@ function App() {
                 deleteProduct={(id) => deleteProduct(id)}
                 editProduct={(dataProduct) => editProduct(dataProduct)}
             />
-            <div className="popUp create">
-                
-                <h1>¡product created!</h1>
-            </div>
+         
         </div>
     );
 }

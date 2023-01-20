@@ -1,5 +1,20 @@
 import Eliminar from "../assets/basura.png";
 import Editar from "../assets/editar.png";
+import Swal from "sweetalert2";
+const eliminarProducto = ()=>{
+	Swal.fire({ 
+        	title:'<h1 class="rojo">¿..¡¡Eliminar!!..?</h1>',
+            html: '<b class="orange">..¿estas seguro de eliminar este producto..?</b>',
+            icon: 'question',
+            background: '#0A1C3E',
+            backdrop: false,
+            timerProgressBar: true,
+            toast: true,
+            position: 'center-end',
+        	
+    })
+	
+}
 
 const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
 	return (
@@ -31,6 +46,10 @@ const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
 								<button
 									className="bt_edit"
 									onClick={() => editProduct(dataApi)}
+										
+									
+									
+									
 								>
 									<img
 										className="icon_2"
@@ -44,9 +63,11 @@ const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
 								<h3 className="bt_modify">Borrar</h3>
 								<button
 									className="bt_trash"
-									onClick={() => deleteProduct(dataApi.id)}
+									onClick={() => eliminarProducto().deleteProduct(dataApi.id)}
+									 			
 								>
 									<img
+										// onClick={() => }
 										className="icon_2"
 										src={Eliminar}
 										alt=""

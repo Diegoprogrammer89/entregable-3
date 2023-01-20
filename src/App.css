@@ -14,6 +14,13 @@ body {
     background-size: auto;
  
 }
+.rojo{
+    
+    color: red;
+}
+.orange{
+    color: #ff851b;
+}
 
 /* --------style form--------- */
 .PrincipalContainer {

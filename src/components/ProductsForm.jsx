@@ -1,8 +1,47 @@
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-import Tienda from "../assets/Tienda.png"
-import Categoria from "../assets/categoria.png"
-import Precio from "../assets/precio.png"
+import Tienda from "../assets/Tienda.png";
+import Categoria from "../assets/categoria.png";
+import Precio from "../assets/precio.png";
+import Swal from "sweetalert2";
+import zanahoria from "../assets/zanahoria.png"
+
+
+
+ 
+    const product_Create = ()=>{
+	    Swal.fire({ 
+            title:'<h2 class="orange">¡..Creado con Éxito..!</h2>',
+            html: '<b class="rojo">¡Operacion Éxitosa!</b>',
+            icon: 'success',
+            button: 'aceptar',
+            timer: '2000',
+            background: '#0A1C3E',
+            backdrop: false,
+            timerProgressBar: true,
+            toast: true,
+            position: 'top-start',
+            //imageUrl: '',
+            //imageWidth: '100px',
+            //imageAlt: '',
+        
+         }) 
+    }     
+    const  product_Edit = ()=>{
+        Swal.fire({ 
+            title:'<h2 class="orange">¡.Editado con Éxito.!</h2>',
+            html: '<b class="rojo">¡Operacion Éxitosa!</b>',
+            icon: 'info',
+            button: 'aceptar',
+            timer: '2000',
+            background: '#0A1C3E',
+            backdrop: false,
+            timerProgressBar: true,
+            toast: true,
+            position: 'top-end',
+           
+        }) 
+    }
 
 
 const ProductsForm = ({
@@ -86,11 +125,15 @@ const ProductsForm = ({
                     </label>
                     </div>
                 {productSelectToEdit ? (
-                    <button className="btnForm" type="submit">
+                    <button className="btnForm" type="submit" 
+                    onClick={() => product_Edit()}
+                    >
                         Modificar
                     </button>
                 ) : (
-                    <button className="btnForm" type="submit">
+                    <button className="btnForm" type="submit"
+                    onClick={() => product_Create()}
+                    >
                         Enviar
                     </button>
                 )}
