@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import ProductsForm from "./components/ProductsForm";
 import ProductsList from "./components/ProductsList";
+import Alert from "./components/Alert";
 import axios from "axios";
 
 function App() {
@@ -49,23 +50,25 @@ function App() {
     };
     return (
         <div className="App">
+            { dataProducts ?
             <ProductsForm
                 createProduct={(data) => createProduct(data)}
                 productSelectToEdit={productToEdit}
                 modifiedProduct={(modifiedData) =>
-                    modifiedProduct(modifiedData)
+                modifiedProduct(modifiedData)
                 }
             />
-            <hr />
-            <br />
+            : <Alert />}
+            
+         
             <ProductsList
                 dataApi={dataProducts}
                 deleteProduct={(id) => deleteProduct(id)}
                 editProduct={(dataProduct) => editProduct(dataProduct)}
             />
             <div className="popUp create">
-                <i className="bx bxs-badge-check"></i>
-                <h3>¡product created!</h3>
+                
+                <h1>¡product created!</h1>
             </div>
         </div>
     );

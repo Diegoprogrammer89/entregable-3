@@ -1,44 +1,59 @@
-import Eliminar from "../assets/basura.png"
-import Editar from "../assets/editar.png"
-
+import Eliminar from "../assets/basura.png";
+import Editar from "../assets/editar.png";
 
 const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
 	return (
 		<div className="container-table">
 			<table className="table">
-				<thead>
-					<tr>
-						<th>Nombre</th>
-						<th>Categoría</th>
-						<th>Precio</th>
-						<th>Estatus</th>
-						<th>Editar</th>
-						<th>Borrar</th>
-					</tr>
-				</thead>
-				<tbody>
+				<tbody className="table_card" >
 					{dataApi.map((dataApi, index) => (
-						<tr key={index}>
-							<td>{dataApi.name}</td>
-							<td>{dataApi.category}</td>
-							<td>{dataApi.price}</td>
-							<td>{dataApi.isAvailable.toString()}</td>
-							<td>
+						<div className="info_table" key={index}>
+                            <h2>Producto</h2>
+							<div>
+								<h3>Nombre:</h3> 
+								{dataApi.name}
+							</div>
+							<div>
+								<h3>Categoría:</h3>
+								{dataApi.category}
+							</div>
+							<div>
+								<h3>Precio:</h3>
+								<p>$ {dataApi.price}</p>	
+							</div>
+							<div>
+								<h3>Estatus:</h3>
+								{dataApi.isAvailable.toString()}
+								
+							</div>
+							<div>
+								<h3 className="bt_modify">Editar</h3>
 								<button
 									className="bt_edit"
 									onClick={() => editProduct(dataApi)}
-								><img className="icon_2" src={Editar} alt="" /></button>
-							</td>
-							<td>
+								>
+									<img
+										className="icon_2"
+										src={Editar}
+										alt=""
+									/>
+								</button>
+							</div>
+
+							<div>
+								<h3 className="bt_modify">Borrar</h3>
 								<button
 									className="bt_trash"
 									onClick={() => deleteProduct(dataApi.id)}
 								>
-									
-									<img className="icon_2" src={Eliminar} alt="" />
+									<img
+										className="icon_2"
+										src={Eliminar}
+										alt=""
+									/>
 								</button>
-							</td>
-						</tr>
+							</div>
+						</div>
 					))}
 				</tbody>
 			</table>
