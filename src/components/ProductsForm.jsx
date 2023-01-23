@@ -10,15 +10,13 @@ const product_Create = () => {
 		title: '<h2 class="orange">¡Creado con Éxito!</h2>',
 		html: '<b class="red">¡Operacion Éxitosa!</b>',
         text:'center',
-		icon: "success",
 		button: "aceptar",
 		timer: "2000",
 		background: "#0A1C3E",
 		backdrop: false,
 		timerProgressBar: true,
-		toast: true,
 		position: "top-start",
-		imageUrl: 'src/assets/naranja-feliz.png',
+		imageUrl: 'public/naranja-feliz.png',
 		imageWidth:'40%',
 	});
 };
@@ -33,7 +31,7 @@ const product_Edit = () => {
 		backdrop: false,
 		timerProgressBar: true,
 		position: "top-end",
-        imageUrl: 'src/assets/mango-molesto.png',
+        imageUrl: 'public/mango-molesto.png',
 	    imageWidth:'30%',
 	});
 };
