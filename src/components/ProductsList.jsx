@@ -2,6 +2,7 @@ import Eliminar from "../assets/basura.png";
 import Editar from "../assets/editar.png";
 import Swal from "sweetalert2";
 
+
 const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
 	const eliminarProducto = (id) => {
 		Swal.fire({
