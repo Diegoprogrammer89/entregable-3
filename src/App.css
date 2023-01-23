@@ -14,14 +14,20 @@ body {
     background-size: auto;
  
 }
-.rojo{
+.red{
     
     color: red;
 }
 .orange{
     color: #ff851b;
 }
-
+.green{
+    color: green;
+}
+.estatus {
+   margin: auto;
+    
+}
 /* --------style form--------- */
 .PrincipalContainer {
   

@@ -3,7 +3,7 @@ import "./App.css";
 import ProductsForm from "./components/ProductsForm";
 import ProductsList from "./components/ProductsList";
 import axios from "axios";
-import Swal from "sweetalert2";
+
 
 function App() {
  
