@@ -16,7 +16,7 @@ const product_Create = () => {
 		backdrop: false,
 		timerProgressBar: true,
 		position: "top-start",
-		imageUrl: 'public/naranja-feliz.png',
+		imageUrl: '/naranja-feliz.png',
 		imageWidth:'40%',
 	});
 };
@@ -31,7 +31,7 @@ const product_Edit = () => {
 		backdrop: false,
 		timerProgressBar: true,
 		position: "top-end",
-        imageUrl: 'public/mango-molesto.png',
+        imageUrl: '/mango-molesto.png',
 	    imageWidth:'30%',
 	});
 };
